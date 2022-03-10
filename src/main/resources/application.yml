@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+country: China
+
+city: Beijing
+
+user1:
+  name: Mason
+  age: 20
+
+hobbies:
+  - swim
+  - guitar
+  - street dance
+
+baseDir: /usr/local
+tempDir: "${baseDir}\t/temp"
+
+# 创建类，用于封装下面的数据
+# 由spring帮我们去加载数据到对象中，一定要告诉spring加载这组信息
+# 使用时候从spring中直接获取信息使用
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: mason
+    password: 980665
+
+logging:
+  level:
+    root: 
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
