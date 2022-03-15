@@ -1,4 +1,4 @@
-package com.example.DynamicProxyDemo;
+package com.example.DynamicProxyDemo.JDK;
 
 public class Julie implements Girl {
 
