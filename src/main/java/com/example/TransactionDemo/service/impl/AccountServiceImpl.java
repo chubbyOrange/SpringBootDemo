@@ -4,12 +4,12 @@ import com.example.TransactionDemo.dao.AccountDao;
 import com.example.TransactionDemo.service.AccountService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-// @Service("accountService")
+@Service("accountService")
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
