@@ -31,6 +31,13 @@ logging:
   level:
     root: 
 
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count==countSql
+  page-size-zero: true
+
 mybatis-plus:
   global-config:
     db-config:
