@@ -1,9 +1,10 @@
 package com.example.service;
 
-import java.util.List;
+// import java.util.List;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
+// import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.domain.Book;
+import com.github.pagehelper.PageInfo;
 
 public interface BookService {
     // Boolean save(Book book);
@@ -20,7 +21,7 @@ public interface BookService {
 
     Book getById(Integer id);
 
-    List<Book> getAll();
+    PageInfo<Book> getAll(int currentPage, int pageSize);
 
-    IPage<Book> getPage(int currentPage, int pageSize);
+    // IPage<Book> getPage(int currentPage, int pageSize);
 }

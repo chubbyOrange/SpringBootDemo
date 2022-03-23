@@ -2,11 +2,13 @@ package com.example.service.impl;
 
 import java.util.List;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+// import com.baomidou.mybatisplus.core.metadata.IPage;
+// import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.dao.BookMapper;
 import com.example.domain.Book;
 import com.example.service.BookService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,16 +48,19 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getAll() {
+    public PageInfo<Book> getAll(int currentPage, int pageSize) {
         // * Auto-generated method stub
         // return bookMapper.selectList(null);
-        return bookMapper.getAll();
+        PageHelper.startPage(currentPage, pageSize);
+        List<Book> all = bookMapper.getAll();
+        PageInfo<Book> info = new PageInfo<>(all);
+        return info;
     }
 
-    @Override
-    public IPage<Book> getPage(int currentPage, int pageSize) {
-        // * Auto-generated method stub
-        IPage<Book> page = new Page<Book>(currentPage, pageSize);
-        return bookMapper.selectPage(page, null);
-    }
+    // @Override
+    // public IPage<Book> getPage(int currentPage, int pageSize) {
+    // // * Auto-generated method stub
+    // IPage<Book> page = new Page<Book>(currentPage, pageSize);
+    // return bookMapper.selectPage(page, null);
+    // }
 }
