@@ -21,7 +21,7 @@ public class Mason {
             @Override
             public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy)
                     throws Throwable {
-                // TODO Auto-generated method stub
+                // * Auto-generated method stub
                 doSomethingBefore();
                 Object object = method.invoke(girl, args);
                 doSomethingAfter();

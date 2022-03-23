@@ -18,40 +18,44 @@ public class BookServiceImpl implements BookService {
     private BookMapper bookMapper;
 
     @Override
-    public Boolean delete(Integer id) {
-        // TODO Auto-generated method stub
-        return bookMapper.deleteById(id) > 0;
+    public /* Boolean */ void save(Book book) {
+        // * Auto-generated method stub
+        // return bookMapper.insert(book) > 0;
+        bookMapper.save(book);
     }
 
     @Override
-    public List<Book> getAll() {
-        // TODO Auto-generated method stub
-        return bookMapper.selectList(null);
+    public /* Boolean */ void update(Book book) {
+        // * Auto-generated method stub
+        // return bookMapper.updateById(book) > 0;
+        bookMapper.update(book);
+    }
+
+    @Override
+    public /* Boolean */ void delete(Integer id) {
+        // * Auto-generated method stub
+        // return bookMapper.deleteById(id) > 0;
+        bookMapper.delete(id);
     }
 
     @Override
     public Book getById(Integer id) {
-        // TODO Auto-generated method stub
-        return bookMapper.selectById(id);
+        // * Auto-generated method stub
+        // return bookMapper.selectById(id);
+        return bookMapper.getById(id);
+    }
+
+    @Override
+    public List<Book> getAll() {
+        // * Auto-generated method stub
+        // return bookMapper.selectList(null);
+        return bookMapper.getAll();
     }
 
     @Override
     public IPage<Book> getPage(int currentPage, int pageSize) {
-        // TODO Auto-generated method stub
+        // * Auto-generated method stub
         IPage<Book> page = new Page<Book>(currentPage, pageSize);
         return bookMapper.selectPage(page, null);
     }
-
-    @Override
-    public Boolean save(Book book) {
-        // TODO Auto-generated method stub
-        return bookMapper.insert(book) > 0;
-    }
-
-    @Override
-    public Boolean update(Book book) {
-        // TODO Auto-generated method stub
-        return bookMapper.updateById(book) > 0;
-    }
-
 }

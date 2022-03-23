@@ -6,11 +6,17 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.domain.Book;
 
 public interface BookService {
-    Boolean save(Book book);
+    // Boolean save(Book book);
 
-    Boolean update(Book book);
+    // Boolean update(Book book);
 
-    Boolean delete(Integer id);
+    // Boolean delete(Integer id);
+
+    void save(Book book);
+
+    void update(Book book);
+
+    void delete(Integer id);
 
     Book getById(Integer id);
 

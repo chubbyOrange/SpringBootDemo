@@ -13,7 +13,7 @@ public class JulieProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        // TODO Auto-generated method stub
+        // * Auto-generated method stub
         doSomethingBefore();
         Object object = method.invoke(girl, args);
         doSomethingAfter();

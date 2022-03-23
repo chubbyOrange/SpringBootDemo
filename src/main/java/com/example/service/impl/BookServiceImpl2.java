@@ -20,7 +20,7 @@ public class BookServiceImpl2 extends ServiceImpl<BookMapper, Book> implements I
 
     @Override
     public IPage<Book> getPage(int currentPage, int pageSize) {
-        // TODO Auto-generated method stub
+        // * Auto-generated method stub
         IPage<Book> page = new Page<Book>(currentPage, pageSize);
         bookMapper.selectPage(page, null);
         return page;
@@ -28,7 +28,7 @@ public class BookServiceImpl2 extends ServiceImpl<BookMapper, Book> implements I
 
     @Override
     public IPage<Book> getPage(int currentPage, int pageSize, Book book) {
-        // TODO Auto-generated method stub
+        // * Auto-generated method stub
         LambdaQueryWrapper<Book> lQueryWrapper = new LambdaQueryWrapper<Book>();
         lQueryWrapper.like(Strings.isNotEmpty(book.getName()), Book::getName, book.getName());
         lQueryWrapper.like(Strings.isNotEmpty(book.getTitle()), Book::getTitle, book.getTitle());
