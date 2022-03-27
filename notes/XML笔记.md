@@ -29,8 +29,9 @@
 			4. 属性值必须使用引号(单双都可)引起来
 			5. 标签必须正确关闭
 			6. xml标签名称区分大小写
+
 		* 快速入门：
-			<?xml version='1.0' ?>
+			<?xml version='1.0'?>
 			<users>
 				<user id='1'>
 					<name>zhangsan</name>
@@ -51,20 +52,19 @@
 				1. 格式：<?xml 属性列表 ?>
 				2. 属性列表：
 					* version：版本号，必须的属性
-					* encoding：编码方式。告知解析引擎当前文档使用的字符集，默认值：ISO-8859-1
+					* encoding：编码方式，告知解析引擎当前文档使用的字符集，默认值：ISO-8859-1
 					* standalone：是否独立
 						* 取值：
 							* yes：不依赖其他文件
 							* no：依赖其他文件
 			2. 指令(了解)：结合css的
 				* <?xml-stylesheet type="text/css" href="a.css" ?>
-			3. 标签：标签名称自定义的
+			3. 标签：标签名称是自定义的
 				* 规则：
 					* 名称可以包含字母、数字以及其他的字符 
 					* 名称不能以数字或者标点符号开始 
 					* 名称不能以字母 xml（或者 XML、Xml 等等）开始 
-					* 名称不能包含空格 
-
+					* 名称不能包含空格
 			4. 属性：
 				id属性值唯一
 			5. 文本：
@@ -73,35 +73,30 @@
 
 	
 		* 约束：规定xml文档的书写规则
-			* 作为框架的使用者(程序员)：
+			1. 作为框架的使用者(程序员)：
 				1. 能够在xml中引入约束文档
 				2. 能够简单的读懂约束文档
-			
-			* 分类：
+			2. 分类：
 				1. DTD:一种简单的约束技术
 				2. Schema:一种复杂的约束技术
 
-
-			* DTD：
-				* 引入dtd文档到xml文档中
+			3. DTD：
+				* 引入：
 					* 内部dtd：将约束规则定义在xml文档中
 					* 外部dtd：将约束的规则定义在外部的dtd文件中
 						* 本地：<!DOCTYPE 根标签名 SYSTEM "dtd文件的位置">
 						* 网络：<!DOCTYPE 根标签名 PUBLIC "dtd文件名字" "dtd文件的位置URL">
 
-
-			* Schema:
+			4. Schema:
 				* 引入：
 					1.填写xml文档的根元素
-					2.引入xsi前缀.  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-					3.引入xsd文件命名空间.  xsi:schemaLocation="http://www.itcast.cn/xml  student.xsd"
-					4.为每一个xsd约束声明一个前缀,作为标识  xmlns="http://www.itcast.cn/xml" 
+					2.引入xsi前缀 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					3.引入xsd文件命名空间 xsi:schemaLocation="http://www.itcast.cn/xml  student.xsd"
+					4.为每一个xsd约束声明一个前缀,作为标识 xmlns="http://www.itcast.cn/xml" 
 
-				<students   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					xmlns="http://www.itcast.cn/xml"
-					xsi:schemaLocation="http://www.itcast.cn/xml  student.xsd">
-	
-	
+					xsi:schemaLocation="http://www.itcast.cn/xml student.xsd">
 
 	3. 解析：操作xml文档，将文档中的数据读取到内存中
 		* 操作xml文档
@@ -113,19 +108,17 @@
 				* 优点：操作方便，可以对文档进行CRUD的所有操作
 				* 缺点：占内存
 			2. SAX：逐行读取，基于事件驱动的。
-				* 优点：不占内存。
-				* 缺点：只能读取，不能增删改
+				* 优点：不占内存
+				* 缺点：只能读取，不能对文档进行CRUD的操作
 
-
-		
 		* xml常见的解析器：
-			1. JAXP：sun公司提供的解析器，支持dom和sax两种思想
+			1. JAXP：SUN公司提供的解析器，支持dom和sax两种方式
 			2. DOM4J：一款非常优秀的解析器
-			3. Jsoup：jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。
-			4. PULL：Android操作系统内置的解析器，sax方式的。
+			3. Jsoup：一款Java的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据
+			4. PULL：Android操作系统内置的sax方式的解析器
 
 
-		* Jsoup：jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。
+		* Jsoup：Jsoup是一款Java的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。
 			* 快速入门：
 				* 步骤：
 					1. 导入jar包
@@ -167,7 +160,6 @@
 					* getElementsByTag​(String tagName)：根据标签名称获取元素对象集合
 					* getElementsByAttribute​(String key)：根据属性名称获取元素对象集合
 					* getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合
-
 				2. 获取属性值
 					* String attr(String key)：根据属性名称获取属性值
 				3. 获取文本内容
@@ -176,7 +168,6 @@
 			5. Node：节点对象
 				* 是Document和Element的父类
 
-			
 		* 快捷查询方式：
 			1. selector:选择器
 				* 使用的方法：Elements	select​(String cssQuery)
@@ -215,9 +206,10 @@
 			        for (JXNode jxNode : jxNodes3) {
 			            System.out.println(jxNode);
 			        }
+
 			        System.out.println("--------------------");
+
 			        //4.4查询student标签下带有id属性的name标签 并且id属性值为itcast
-			
 			        List<JXNode> jxNodes4 = jxDocument.selN("//student/name[@id='itcast']");
 			        for (JXNode jxNode : jxNodes4) {
 			            System.out.println(jxNode);
