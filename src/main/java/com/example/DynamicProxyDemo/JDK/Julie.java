@@ -3,15 +3,16 @@ package com.example.DynamicProxyDemo.JDK;
 public class Julie implements Girl {
 
     @Override
-    public void watchMovies() {
+    public void watchMovies(String adj) {
         // * Auto-generated method stub
-        System.out.println("Julie says: \"This movie is fantastic!\"");
+        System.out.println("Julie says: \"This movie is " + adj + "!\"");
     }
 
     @Override
-    public void haveDinners() {
+    public String haveDinners(String adj) {
         // * Auto-generated method stub
-        System.out.println("Julie says: \"These dishes are so yummy!\"");
+        System.out.println("Julie says: \"These dishes are " + adj + "!\"");
+        return "";
     }
 
 }
